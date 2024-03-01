@@ -5,13 +5,16 @@ androidGradle = "8.3.0"
 androidTools = "31.2.2"
 kotlin = "1.9.22"
 core-ktx = "1.12.0"
+hilt = "2.50"
+hiltExt = "1.2.0"
+
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 lifecycle-runtime-ktx = "2.7.0"
 activity-compose = "1.8.2"
 compose-bom = "2024.02.01"
-ksp = "1.9.21-1.0.16"
+ksp = "1.9.22-1.0.16"
 
 [libraries]
 accompanist-permissions = { module = "com.google.accompanist:accompanist", version.ref = "accompanist" }
@@ -29,6 +32,11 @@ androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview
 androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 androidx-material3 = { module = "androidx.compose.material3:material3" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltExt" }
+hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "hiltExt" }
 junit = { module = "junit:junit", version.ref = "junit" }
 
 # Dependencies of the included build-logic
@@ -40,6 +48,7 @@ ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradle" }
 android-library = { id = "com.android.library", version.ref = "androidGradle" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

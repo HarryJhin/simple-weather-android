@@ -21,6 +21,7 @@ tasks.withType<KotlinCompile>().configureEach {
 dependencies {
     compileOnly(libs.android.gradle)
     compileOnly(libs.kotlin.gradle.plugin)
+    compileOnly(libs.ksp.gradle.plugin)
 }
 
 tasks {
@@ -47,6 +48,10 @@ gradlePlugin {
         register("androidLibraryCompose") {
             id = "simpleweatherandroid.android.library.compose"
             implementationClass = "AndroidLibraryComposePlugin"
+        }
+        register("androidHilt") {
+            id = "simpleweatherandroid.android.hilt"
+            implementationClass = "AndroidHiltPlugin"
         }
     }
 }

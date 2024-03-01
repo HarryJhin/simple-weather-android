@@ -6,8 +6,8 @@ fun DependencyHandlerDelegate.implementation(dependencyNotation: Any) {
     add("implementation", dependencyNotation)
 }
 
-fun DependencyHandlerDelegate.kapt(dependencyNotation: Any) {
-    add("kapt", dependencyNotation)
+fun DependencyHandlerDelegate.ksp(dependencyNotation: Any) {
+    add("ksp", dependencyNotation)
 }
 
 fun DependencyHandlerDelegate.testImplementation(dependencyNotation: Any) {

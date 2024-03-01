@@ -15,4 +15,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "simple-weather-android"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")

@@ -25,3 +25,6 @@ val Project.targetSdk: Int
  */
 val Project.minSdk: Int
     get() = property("minSdk").toString().toInt()
+
+val Project.composeCompiler: String
+    get() = property("composeCompiler").toString()

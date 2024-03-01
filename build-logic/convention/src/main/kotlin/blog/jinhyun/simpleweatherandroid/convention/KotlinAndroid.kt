@@ -9,42 +9,21 @@ import com.android.build.api.dsl.Installation
 import com.android.build.api.dsl.ProductFlavor
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalog
-import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.provideDelegate
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 /**
- * 프로젝트의 `compileSdk`를 가져옵니다.
+ * 모듈 수준의 build.gradle.kts에 적용할 플러그인을 설정합니다.
  *
- * `gradle.properties`에서 `compileSdk`를 설정합니다.
+ * ```kotlin
+ * plugins {
+ *   id("${plugin}")
+ *   ...
+ * }
  */
-val Project.compileSdk: Int
-    get() = property("compileSdk").toString().toInt()
-
-/**
- * 프로젝트의 targetSdk를 가져옵니다.
- *
- * `gradle.properties`에서 `targetSdk`를 설정합니다.
- */
-val Project.targetSdk: Int
-    get() = property("targetSdk").toString().toInt()
-
-/**
- * 프로젝트의 `minSdk`를 가져옵니다.
- *
- * `gradle.properties`에서 `minSdk`를 설정합니다.
- */
-val Project.minSdk: Int
-    get() = property("minSdk").toString().toInt()
-
-val Project.libs
-    get(): VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
-
 fun Project.plugins(vararg plugin: String) {
     with(pluginManager) {
         plugin.forEach(::apply)
@@ -113,9 +92,7 @@ fun <BuildFeaturesT : BuildFeatures,
     with(extension) {
         compileSdk = this@configureKotlinAndroid.compileSdk
 
-        defaultConfig {
-            minSdk = this@configureKotlinAndroid.minSdk
-        }
+        defaultConfig.minSdk = this@configureKotlinAndroid.minSdk
 
         compileOptions {
             // java.time 라이브러리 중 최소 지원 sdk 버전보다 더 낮은 버전의 sdk(minSdk)를 지원하는 경우에는 desugaring이 필요합니다.
@@ -145,7 +122,6 @@ private fun Project.configureKotlin() {
             allWarningsAsErrors = warningsAsErrors.toBoolean()
             freeCompilerArgs = freeCompilerArgs + listOf(
                 // Enable experimental coroutines APIs, including Flow
-                // 코틀린
                 "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
             )
         }

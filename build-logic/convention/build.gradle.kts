@@ -36,5 +36,9 @@ gradlePlugin {
             id = "simpleweatherandroid.android.application"
             implementationClass = "AndroidApplicationPlugin"
         }
+        register("androidLibrary") {
+            id = "simpleweatherandroid.android.library"
+            implementationClass = "AndroidLibraryPlugin"
+        }
     }
 }

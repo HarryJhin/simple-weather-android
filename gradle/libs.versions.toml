@@ -1,7 +1,7 @@
 [versions]
 accompanist = "0.32.0"
 androidDesugarJdkLibs = "2.0.4"
-androidGradle = "8.2.2"
+androidGradle = "8.3.0"
 androidTools = "31.2.2"
 kotlin = "1.9.22"
 core-ktx = "1.12.0"

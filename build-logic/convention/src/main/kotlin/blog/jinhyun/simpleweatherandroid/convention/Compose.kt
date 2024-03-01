@@ -12,7 +12,7 @@ import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-fun <BuildFeaturesT : BuildFeatures,
+internal fun <BuildFeaturesT : BuildFeatures,
     BuildTypeT : BuildType,
     DefaultConfigT : DefaultConfig,
     ProductFlavorT : ProductFlavor,

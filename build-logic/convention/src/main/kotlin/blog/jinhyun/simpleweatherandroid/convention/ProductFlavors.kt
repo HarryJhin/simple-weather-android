@@ -10,7 +10,7 @@ import com.android.build.api.dsl.DefaultConfig
 import com.android.build.api.dsl.Installation
 import com.android.build.api.dsl.ProductFlavor
 
-fun <BuildFeaturesT : BuildFeatures,
+internal fun <BuildFeaturesT : BuildFeatures,
     BuildTypeT : BuildType,
     DefaultConfigT : DefaultConfig,
     ProductFlavorT : ProductFlavor,

@@ -24,7 +24,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
  *   ...
  * }
  */
-fun Project.plugins(vararg plugin: String) {
+internal fun Project.plugins(vararg plugin: String) {
     with(pluginManager) {
         plugin.forEach(::apply)
     }
@@ -75,7 +75,7 @@ inline fun <reified T : Any> Project.android(noinline action: T.() -> Unit) {
  * }
  * ```
  */
-fun <BuildFeaturesT : BuildFeatures,
+internal fun <BuildFeaturesT : BuildFeatures,
     BuildTypeT : BuildType,
     DefaultConfigT : DefaultConfig,
     ProductFlavorT : ProductFlavor,

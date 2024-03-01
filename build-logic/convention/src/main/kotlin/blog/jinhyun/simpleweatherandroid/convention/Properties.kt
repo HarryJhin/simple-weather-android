@@ -7,7 +7,7 @@ import org.gradle.api.Project
  *
  * `gradle.properties`에서 `compileSdk`를 설정합니다.
  */
-val Project.compileSdk: Int
+internal val Project.compileSdk: Int
     get() = property("compileSdk").toString().toInt()
 
 /**
@@ -15,7 +15,7 @@ val Project.compileSdk: Int
  *
  * `gradle.properties`에서 `targetSdk`를 설정합니다.
  */
-val Project.targetSdk: Int
+internal val Project.targetSdk: Int
     get() = property("targetSdk").toString().toInt()
 
 /**
@@ -23,8 +23,8 @@ val Project.targetSdk: Int
  *
  * `gradle.properties`에서 `minSdk`를 설정합니다.
  */
-val Project.minSdk: Int
+internal val Project.minSdk: Int
     get() = property("minSdk").toString().toInt()
 
-val Project.composeCompiler: String
+internal val Project.composeCompiler: String
     get() = property("composeCompiler").toString()

@@ -18,3 +18,13 @@ rootProject.name = "simple-weather-android"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
+includes("core")
+includes("view")
+
+fun includes(directory: String) {
+    file(directory).listFiles()?.forEach { file ->
+        if (file.isDirectory) {
+            include(":$directory:${file.name}")
+        }
+    }
+}

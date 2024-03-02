@@ -54,3 +54,10 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 secret-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version = "2.0.1" }
+
+# 프로젝트에서 정의한 플러그인
+simpleweatherandroid-android-application = { id = "simpleweatherandroid.android.application", version = "undefined" }
+simpleweatherandroid-android-application-compose = { id = "simpleweatherandroid.android.application.compose", version = "undefined" }
+simpleweatherandroid-android-library = { id = "simpleweatherandroid.android.library", version = "undefined" }
+simpleweatherandroid-android-library-compose = { id = "simpleweatherandroid.android.library.compose", version = "undefined" }
+simpleweatherandroid-android-hilt = { id = "simpleweatherandroid.android.hilt", version = "undefined" }

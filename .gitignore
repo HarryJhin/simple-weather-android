@@ -46,3 +46,6 @@ captures/
 
 # SiginingConfig
 *.jks
+
+# Network
+secrets.properties

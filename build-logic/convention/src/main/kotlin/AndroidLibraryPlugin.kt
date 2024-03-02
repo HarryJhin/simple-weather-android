@@ -1,6 +1,8 @@
 import blog.jinhyun.simpleweatherandroid.convention.android
 import blog.jinhyun.simpleweatherandroid.convention.configureFlavors
 import blog.jinhyun.simpleweatherandroid.convention.configureKotlinAndroid
+import blog.jinhyun.simpleweatherandroid.convention.implementation
+import blog.jinhyun.simpleweatherandroid.convention.libs
 import blog.jinhyun.simpleweatherandroid.convention.plugins
 import blog.jinhyun.simpleweatherandroid.convention.testImplementation
 import com.android.build.gradle.LibraryExtension
@@ -26,6 +28,8 @@ class AndroidLibraryPlugin : Plugin<Project> {
             }
 
             dependencies {
+                implementation(libs.findLibrary("androidx.tracing.ktx").get())
+
                 testImplementation(kotlin("test"))
             }
         }
